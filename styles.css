@@ -19,6 +19,10 @@ h1 {
 }
 
 .visual-block {
+    background-color: black;
+    border-color: darkgreen;
+    border-style: solid;
+    border-radius: 5px;
     display: block;
     margin: 0 auto;
 }
@@ -32,6 +36,7 @@ h1 {
     padding: 1rem;
     margin-left: 35%;
     margin-right: 35%;
+    margin-top: -3px;
 }
 
 .play-pause-buttons {
