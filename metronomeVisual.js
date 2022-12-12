@@ -9,16 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     c.fillRect(0, 0, 420, 130);
 
     let x = 1;
+    let dx = 5;
+    let bpm = 120;
 
     function animate() {
         requestAnimationFrame(animate);
-        x += 1;
+        x += dx;
         c.clearRect(0, 0, canvas.width, canvas.height);
         c.beginPath();
         c.strokeStyle = 'white';
         c.moveTo(x, 0);
         c.lineTo(x, 130);
         c.stroke();
+        if (x >= canvas.width) {
+            dx = -dx;
+        }
+
+        if (x <= 0) {
+            dx = -dx;
+        }
+
 
 }
 
