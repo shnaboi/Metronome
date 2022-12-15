@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     pauseButton.addEventListener('click', function() {
         stop();
+        x = 1;
     })
 
     function animate() {
