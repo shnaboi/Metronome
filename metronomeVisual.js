@@ -11,32 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let x = 1;
     let dx = 2.3;
     let bpm = 120;
-    let visual = false;
+    let requestId;
 
     const playButton = document.getElementById('play');
     const pauseButton = document.getElementById('pause');
 
-    if (visual == false) {
-        playButton.addEventListener('click', (event) => {
-            animate();
-            visual = true;
-            console.log(visual);
-        })
-    } else if (visual == true) {
-
-    }
-
-    pauseButton.addEventListener('click', (event) => {
-        visual = false;
-        console.log(visual);
+    playButton.addEventListener('click', function() {
+        start();
+    })
+    pauseButton.addEventListener('click', function() {
+        stop();
     })
 
-    if (visual === true) {
-        animate();
-    } 
-
     function animate() {
-        requestAnimationFrame(animate);
+        requestId = undefined;
+        // requestAnimationFrame(animate);
         x += dx;
         c.clearRect(0, 0, canvas.width, canvas.height);
         c.beginPath();
@@ -47,8 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (x >= canvas.width || x <= 0) {
             dx = -dx;
         }
+        if (pause == true) {
+            setTimeout(function() {
+                window.cancelAnimationFrame;
+            })
+        }
+        start();
     }
 
+    function start() {
+        if (!requestId) {
+            requestId = window.requestAnimationFrame(animate);
+        }
+    }
 
+    function stop() {
+        if (requestId) {
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            window.cancelAnimationFrame(requestId);
+            requestId = undefined;
+        }
+    }
 
 })
+
+// Play & Pause "work", however Play does not reset animation from beginning
