@@ -11,13 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let x = 1;
     let dx = 2.3;
     let bpm = 120;
-    let requestId;
+    let requestId; 
 
     const playButton = document.getElementById('play');
+        function startMet() {
+            let audio = new Audio("click.mp3");
+            audio.play();
+        }
     const pauseButton = document.getElementById('pause');
 
     playButton.addEventListener('click', function() {
         start();
+        startMet();
     })
     pauseButton.addEventListener('click', function() {
         stop();
