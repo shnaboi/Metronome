@@ -18,16 +18,40 @@ h1 {
     text-align: center;
 }
 
+.visual-container {
+    z-index: 1;
+    padding-bottom: 10px;
+    background-color: rgb(92, 136, 121);
+}
+
 .visual-block {
-    background-color: black;
+    position: relative;
     border-color: darkgreen;
     border-style: solid;
     border-radius: 5px;
-    display: block;
+    display: flex;
     margin: 0 auto;
+    width: 420px;
+    z-index: 500;
+}
+
+.visual-tick {
+    position: relative;
+    z-index: 1;
+	border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+	border-bottom: 100px solid white;
+    top: 5px;
+    left: -24px;
+    transition: transform 1000ms linear;
+}
+
+.visual-block:hover .visual-tick {
+    transform: translateX(420px);
 }
 
 .play-pause-container {
+    z-index: 5;
     display: grid;
     justify-items: center;
     border-color: darkgreen;
@@ -36,7 +60,7 @@ h1 {
     padding: 1rem;
     margin-left: 35%;
     margin-right: 35%;
-    margin-top: -3px;
+    margin-top: -13px;
 }
 
 .play-pause-buttons {
@@ -68,7 +92,7 @@ h1 {
 }
 
 .slider {
-    width: 90%;
+    width: 100%;
     justify-content: center;
     height: 10px;
 }

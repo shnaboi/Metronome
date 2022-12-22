@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = 130;
     canvas.width = 420;
 
-    c.fillRect(0, 0, 420, 130);
-
     let x = 1;
     let dx = 50;
     let bpm = 120;
