@@ -9,9 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     c.fillRect(0, 0, 420, 130);
 
     let x = 1;
-    let dx = 2.3;
+    let dx = 50;
     let bpm = 120;
     let requestId; 
+    let slider = document.getElementById("sliderBPM");
+    let output = document.getElementById("bpm");
+
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+        } 
 
     const playButton = document.getElementById('play');
         function startMet() {
@@ -40,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         c.stroke();
         if (x >= canvas.width || x <= 0) {
             dx = -dx;
+            startMet();
         }
         start();
     }
