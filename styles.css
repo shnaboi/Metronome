@@ -20,30 +20,51 @@ h1 {
 
 .visual-container {
     z-index: 1;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     background-color: rgb(92, 136, 121);
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .visual-block {
     position: relative;
-    border-color: darkgreen;
-    border-style: solid;
-    border-radius: 5px;
     display: flex;
     margin: 0 auto;
     width: 420px;
     z-index: 500;
 }
 
+.visual-block-border {
+    position: absolute;
+    border-color: darkgreen;
+    border-style: solid;
+    border-radius: 5px;
+    width: 420px;
+    height: 130px;
+    left: -5px;
+    z-index: 2;
+}
+
+.visual-block-outside {
+    background-color: aliceblue;
+    position: absolute;
+    flex-wrap: wrap;
+    width: 100px;
+}
+
 .visual-tick {
     position: relative;
     z-index: 1;
-	border-left: 24px solid transparent;
-	border-right: 24px solid transparent;
-	border-bottom: 100px solid white;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+	border-bottom: 96px solid white;
     top: 5px;
-    left: -24px;
+    left: -20px;
     transition: transform 1000ms linear;
+}
+
+.canvas {
+    /* write stuff */
 }
 
 .visual-block:hover .visual-tick {
@@ -60,7 +81,7 @@ h1 {
     padding: 1rem;
     margin-left: 35%;
     margin-right: 35%;
-    margin-top: -13px;
+    margin-top: 3px;
 }
 
 .play-pause-buttons {

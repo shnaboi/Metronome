@@ -12,11 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let requestId; 
     let slider = document.getElementById("sliderBPM");
     let output = document.getElementById("bpm");
+    let visualTick = document.getElementById("visualTick");
 
     output.innerHTML = slider.value;
 
     slider.oninput = function() {
         output.innerHTML = this.value;
+        visualTick.style.transitionDuration = (slider.value*2 + 'ms');
         } 
 
     const playButton = document.getElementById('play');
@@ -28,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     playButton.addEventListener('click', function() {
         start();
-        startMet();
+        // startMet();
+        visualTick.classList.add('animation');
     })
     pauseButton.addEventListener('click', function() {
         stop();
