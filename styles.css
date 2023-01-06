@@ -99,7 +99,7 @@ h1 {
     cursor: pointer;
 }
 
-.controls {
+.control-container {
     background-color: lightslategray;
     display: block;
     padding: 12px;
@@ -116,4 +116,9 @@ h1 {
     width: 100%;
     justify-content: center;
     height: 10px;
+}
+
+.control-divider {
+    border: 1px solid darkgreen;
+    margin: 5px 0px 5px 0px;
 }

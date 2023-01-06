@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.oninput = function() {
         output.innerHTML = this.value;
         visualTick.style.transitionDuration = (slider.value*2 + 'ms');
+        // 60,000 / Bpm = Ms
         } 
 
     const playButton = document.getElementById('play');
@@ -70,5 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-// Add audio click
+// Make bpm slider align with click sound
+// make visual move correctly with click sound
+// add subdivision feature, both visual and audio
+// add tempo automation feature
 
